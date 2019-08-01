@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+  	<ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Nossa API</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding *ngIf="users">
+	<ion-searchbar animated (ionInput)="filterList($event)" (ionClear)="ngOnInit()"></ion-searchbar>
+	<ion-card *ngFor="let usuario of users">
+		<ion-card-header>
+			<ion-card-title>{{ usuario?.name }}</ion-card-title>			
+		</ion-card-header>
+	</ion-card>
+</ion-content>

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+  	<ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Deputados</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding *ngIf="deputados">
+	<ion-card *ngFor="let deputado of deputados">
+		<ion-card-header>
+			<ion-card-title>{{deputado?.nome}}</ion-card-title>
+			<ion-card-subtitle>{{deputado?.siglaPartido}} - {{deputado?.siglaUf}}</ion-card-subtitle>
+			<ion-card-content *ngIf="deputado?.urlFoto">
+				<ion-img [src]="deputado?.urlFoto"></ion-img>
+				<ion-button expand="full" color="primary" (click)="getDespesas(deputado.id)">Despesas</ion-button>
+			</ion-card-content>
+		</ion-card-header>
+	</ion-card>
+</ion-content>

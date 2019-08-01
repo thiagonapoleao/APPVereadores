@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+  	<ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Cadastro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label position="floating">Nome</ion-label>
+    <ion-input type="text" placeholder="Nome completo" name="nome" [(ngModel)]="nome"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="fixed">E-mail</ion-label>
+    <ion-input type="email" placeholder="E-mail" name="email"[(ngModel)]="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Nascimento</ion-label>
+    <ion-datetime display-format="DD MM YYYY" [(ngModel)]="nasc"></ion-datetime>
+  </ion-item>
+
+  <ion-list>
+    <ion-radio-group [(ngModel)]="sexo">
+      <ion-list-header>Sexo</ion-list-header>
+
+      <ion-item>
+        <ion-label>Feminino</ion-label>
+        <ion-radio name="sexo" value="f"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Masculino</ion-label>
+        <ion-radio name="sexo" value="m"></ion-radio>
+      </ion-item>
+
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-button (click)="enviarCadastro()">Cadastrar</ion-button>
+</ion-content>
+
+
+
+
+
+
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>
+      Rodapé Cadastro
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
